@@ -16,11 +16,10 @@ def getAll():
 
 @get('/animal/<name>')
 def getOne(name):
-    for animal in animals :
-        if animal['name'] == name :
-            the_animal = animal 
-    
-    return {'animal' : the_animal}
+     
+    the_animal = [animal for animal in animals if animal['name']==name]
+
+    return {'animal' : the_animal[0]}
 
 
 run(reloader=True,debug=True)
