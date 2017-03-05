@@ -14,4 +14,13 @@ animals = [{'name' : 'Dumbo','type':'elephant'},
 def getAll():
     return {'animals':animals}
 
+@get('/animal/<name>')
+def getOne(name):
+    for animal in animals :
+        if animal['name'] == name :
+            the_animal = animal 
+    
+    return {'animal' : the_animal}
+
+
 run(reloader=True,debug=True)
